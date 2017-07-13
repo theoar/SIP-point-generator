@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1143</width>
+    <height>474</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Konwerter</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QPushButton" name="ButtonOpen">
+      <property name="text">
+       <string>Otwórz</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLabel" name="label">
+      <property name="toolTip">
+       <string>Maksymalna odległośc pomiędzy punktami wstawienia</string>
+      </property>
+      <property name="text">
+       <string>Maksymalne przesunięcie w poziomie:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QDoubleSpinBox" name="SpinBoxDeltaY">
+      <property name="minimum">
+       <double>0.010000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.050000000000000</double>
+      </property>
+      <property name="value">
+       <double>1.400000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="QLabel" name="label_2">
+      <property name="toolTip">
+       <string>Maksymalny kąt obrotu tekstu</string>
+      </property>
+      <property name="text">
+       <string>Maksymalne pochylenie:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5">
+     <widget class="QDoubleSpinBox" name="SpinBoxKat">
+      <property name="singleStep">
+       <double>0.100000000000000</double>
+      </property>
+      <property name="value">
+       <double>5.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="ButtonConvert">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Konwertuj</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLabel" name="label_3">
+      <property name="toolTip">
+       <string>Maksymalne przesunięcie w poziomie pomiędzy punktami (X1-X2)</string>
+      </property>
+      <property name="text">
+       <string>Maksymalne przesunięcie w pionie:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QDoubleSpinBox" name="SpinBoxDeltaX">
+      <property name="minimum">
+       <double>0.010000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.050000000000000</double>
+      </property>
+      <property name="value">
+       <double>1.750000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Maksymalna różnica pochylenia:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="5">
+     <widget class="QDoubleSpinBox" name="SpinBoxKatDiff">
+      <property name="singleStep">
+       <double>0.100000000000000</double>
+      </property>
+      <property name="value">
+       <double>3.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="ButtonSave">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Zapisz</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Maksymalna odległośc:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3">
+     <widget class="QDoubleSpinBox" name="SpinBoxOdl">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="6">
+     <widget class="QTableWidget" name="Table">
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0" colspan="6">
+     <widget class="QProgressBar" name="ProgresBar">
+      <property name="value">
+       <number>24</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>ButtonConvert</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onButtonConvert()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>64</x>
+     <y>62</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>71</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonSave</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onButtonSave()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>47</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>29</x>
+     <y>186</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonOpen</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onButtonOpen()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>55</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>51</x>
+     <y>85</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SpinBoxDeltaX</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onPrzesuniecieChange()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>245</x>
+     <y>138</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>294</x>
+     <y>176</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SpinBoxDeltaY</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onPrzesuniecieChange()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>226</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>327</x>
+     <y>104</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onButtonConvert()</slot>
+  <slot>onButtonSave()</slot>
+  <slot>onButtonOpen()</slot>
+  <slot>onPrzesuniecieChange()</slot>
+ </slots>
+</ui>
